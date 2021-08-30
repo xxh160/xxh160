@@ -80,6 +80,7 @@
 - firefox
 - tree
 - doctoc
+- unrar
 
 ### docker
 

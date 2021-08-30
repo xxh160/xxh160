@@ -57,7 +57,8 @@ Start from `2021.05.28`.
 
 `!!! TODAY !!!`
 
-* [ ] `08.20` sicp lec3b
+* [X] `08.20` sicp lec3b
+* [ ] `08.20` sicp lec4a
 
 `!!! TODAY !!!`
 
