@@ -1,3 +1,0 @@
-# groovyy
-
-`groovy`！！！

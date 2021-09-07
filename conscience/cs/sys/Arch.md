@@ -3,6 +3,7 @@
 记录过程，遇到类似问题可以参考。
 
 - [Arch configurations and problems](#arch-configurations-and-problems)
+  - [参考](#参考)
   - [system config](#system-config)
     - [docker](#docker)
     - [golang](#golang)
@@ -19,10 +20,13 @@
     - [flameshot 快捷键配置](#flameshot-快捷键配置)
     - [grub2 主题配置](#grub2-主题配置)
     - [回收站配置](#回收站配置)
+    - [virt-manager 共享文件夹设置](#virt-manager-共享文件夹设置)
   - [小技巧](#小技巧)
     - [图形界面切换](#图形界面切换)
   - [Q&A](#qa)
     - [efi 启动分区丢失](#efi-启动分区丢失)
+    - [代理问题](#代理问题)
+    - [virt-manager 虚拟机启动失败](#virt-manager-虚拟机启动失败)
     - [emoji 编码问题部分解决](#emoji-编码问题部分解决)
     - [kde-applications 显示没有后端](#kde-applications-显示没有后端)
     - [pdf 中文乱码](#pdf-中文乱码)
@@ -44,6 +48,10 @@
     - [配置启动加载器](#配置启动加载器)
     - [设置图形用户界面](#设置图形用户界面)
     - [收尾](#收尾)
+
+## 参考
+
+- [ArchLinuxTutorial](https://archlinuxstudio.github.io/ArchLinuxTutorial/#/)
 
 ## system config
 
@@ -81,6 +89,9 @@
 - tree
 - doctoc
 - unrar
+- easyconnect
+- virt-manager
+- bomi
 
 ### docker
 
@@ -269,6 +280,8 @@ git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plu
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions sudo extract)
 ```
 
+添加或者修改，原本的 `.zshrc` 里边可能已经有了部分配置。
+
 `sudo`，`extract`是`oh-my-zsh`自带的，前者按两下`esc`命令行首添加`sudo`，后者一键解压神器。
 
 ### 页面大小配置
@@ -344,6 +357,28 @@ alias rm="bash $sys/sh/safe_rm.sh"
 0 4 * * 1 rm -rf /home/xiayi/.trash/*
 ```
 
+### virt-manager 共享文件夹设置
+
+先使用 dd 创建一个文件并格式化：
+
+```bash
+dd if=/dev/zero of=/var/lib/libvirt/images/share.img bs=1M count=500
+mkfs.ext4 /var/lib/libvirt/images/share.img
+```
+
+而后在宿主机上创建文件夹并以此挂载刚刚的文件：
+
+```shell
+mkdir /tmp/share
+mount -o loop /var/lib/libvirt/images/share.img /tmp/share
+```
+
+在 virt-manager 中挂载这块磁盘：
+
+![arch_1](../../../assets/arch_1.png)
+
+最后在虚拟机中挂载它即可，一般来说是 /dev/vd*。
+
 ## 小技巧
 
 ### 图形界面切换
@@ -377,6 +412,28 @@ alias rm="bash $sys/sh/safe_rm.sh"
 然后，丢失后其实需要做的只有两次`mount`，一次`swapon`，然后`chroot`，然后`grub-install`，`grub-mkconfig`。
 
 在`mkconfig`的时候只要确认找到一些必要的内核文件等什么的就行。
+
+### 代理问题
+
+clash 突然不能用了。
+
+原因没有确定，个人 clash 配置没有出问题，只有可能是系统出问题了。
+
+目前有 3 种解决方案：
+
+1. 仍然用 clash，且使用系统代理。在设置代理端口的时候，用最下边的设置方式 `Use manually ...` 而不是直接设置系统代理。kde 的系统设置就是个玩具。
+2. 仍然用 clash，且不用系统代理。那么改用 firefox，在 setting 中设置个性化代理方式。
+3. 不用 clash，使用 v2rayA。具体见其[官方 wiki](https://github.com/v2rayA/v2rayA/wiki/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95#user-content-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%AF%95%E5%90%8E%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8)。这种配置是透明代理。
+
+如果想手动配置透明代理看[这个教程](https://guide.v2fly.org/#%E5%A3%B0%E6%98%8E)。
+
+### virt-manager 虚拟机启动失败
+
+具体原因可以看[这篇帖子](https://www.xmodulo.com/network-default-is-not-active.html)，解决方法可以看[这篇帖子](https://www.jianshu.com/p/5af449e07c11)。
+
+就是 default 网络没有启动，这个网络是用于连接宿主机和虚拟机的。其实具体我也不是很清楚。
+
+简而言之就是启动 default 网络并设置自动启动。
 
 ### emoji 编码问题部分解决
 
