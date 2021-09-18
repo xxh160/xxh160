@@ -92,6 +92,8 @@
 - easyconnect
 - virt-manager
 - bomi
+- scala, sbt
+- alsa-utils
 
 ### docker
 
@@ -434,6 +436,8 @@ clash 突然不能用了。
 就是 default 网络没有启动，这个网络是用于连接宿主机和虚拟机的。其实具体我也不是很清楚。
 
 简而言之就是启动 default 网络并设置自动启动。
+
+还有，更新内核后需要重新启动电脑，否则会报错 `unable to open /dev/net/tun`。
 
 ### emoji 编码问题部分解决
 

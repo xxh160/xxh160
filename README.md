@@ -1,6 +1,6 @@
 ### 👏 Welcome
 
-* I'm building a personal blog with React and Spring!
+* I'm building my blog with React and Spring!
 * Please do look forward to!
 
 #### 😉 Who am i
@@ -8,7 +8,6 @@
 * A pathetic NJU Software Engineering student.  
 * Java & cpp & python.
 * Linux, yes! Arch, yes?
-* [Resume](./Resume.pdf)
 
 #### 📬 How to reach me
 
