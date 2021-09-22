@@ -371,8 +371,8 @@ mkfs.ext4 /var/lib/libvirt/images/share.img
 而后在宿主机上创建文件夹并以此挂载刚刚的文件：
 
 ```shell
-mkdir /tmp/share
-mount -o loop /var/lib/libvirt/images/share.img /tmp/share
+mkdir ~/Mine/share
+mount -o loop /var/lib/libvirt/images/share.img ~/Mine/share
 ```
 
 在 virt-manager 中挂载这块磁盘：
