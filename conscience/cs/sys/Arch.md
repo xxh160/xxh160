@@ -5,6 +5,7 @@
 - [Arch configurations and problems](#arch-configurations-and-problems)
   - [参考](#参考)
   - [system config](#system-config)
+    - [vim plugin configuration](#vim-plugin-configuration)
     - [docker](#docker)
     - [golang](#golang)
     - [anaconda](#anaconda)
@@ -94,6 +95,31 @@
 - bomi
 - scala, sbt
 - alsa-utils
+- kwin-tiling
+
+### vim plugin configuration
+
+安装插件管理器 vim-plug：
+
+```shell
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+插件列表：
+
+```txt
+call plug#begin('~/.vim/plugged')
+Plug 'Raimondi/delimitMate'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
+# 文件目录
+Plug 'preservim/nerdtree'
+# 模糊查找
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+call plug#end()
+```
 
 ### docker
 
