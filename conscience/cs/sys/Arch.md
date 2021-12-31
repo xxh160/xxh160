@@ -288,7 +288,7 @@ sudo systemctl enable bluetooth.service
 
 ### zsh
 
-zsh插件配置。
+zsh 插件配置。
 
 `zsh-syntax-hightlighting`，命令高亮。
 
