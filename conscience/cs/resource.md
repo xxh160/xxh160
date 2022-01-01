@@ -1,6 +1,6 @@
 # ReSouRCes
 
-文档、教程、在线工具。
+文档 教程 在线工具
 
 ## database
 
