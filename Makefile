@@ -1,11 +1,15 @@
 CUR_TIME:=$(shell date +"%Y-%m-%d_%H:%M:%S")
 
-upload:
+.PHONY: save push fetch history
+
+save:
 	git add .
 	git commit -m "$(CUR_TIME)"
+
+push:
 	git push origin main
 	
-maintain:
+fetch:
 	git stash
 	git fetch origin main:tmp
 	git merge tmp
