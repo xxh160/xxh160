@@ -1,19 +1,17 @@
 ### 👏 Welcome
 
-* I'm building my blog with React and Spring!
+* I'm building my blog with Flutter and Spring!
 * Please do look forward to!
 
 #### 😉 Who am i
 
 * A pathetic NJU Software Engineering student.  
-* Java & cpp & python.
-* Linux, yes! Arch, yes?
+* c/c++ & Java.
+* Linux(Arch).
 
 #### 📬 How to reach me
 
 * QQ: 1609824539
-* Email: xxh1609824539@163.com
-
-#### 💻 Computer is a piece of Art
+* Email: vincent.xiayi@gmail.com
 
 ![madneal's github stats](https://github-readme-stats.vercel.app/api?username=xxh160&show_icons=true&theme=radical)

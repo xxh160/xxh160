@@ -46,4 +46,4 @@ lisp 语法基本介绍：
 
 - Ans: a is a primitive element, but b is a compound procedure.
 
-![sicp_1](../../../assets/sicp_1.png)
+![sicp_1](../../assets/sicp_1.png)

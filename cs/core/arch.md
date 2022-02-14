@@ -22,7 +22,7 @@
     - [grub2 主题配置](#grub2-主题配置)
     - [回收站配置](#回收站配置)
     - [virt-manager 共享文件夹设置](#virt-manager-共享文件夹设置)
-  - [小技巧](#小技巧)
+  - [tips](#tips)
     - [图形界面切换](#图形界面切换)
   - [Q&A](#qa)
     - [efi 启动分区丢失](#efi-启动分区丢失)
@@ -403,11 +403,11 @@ mount -o loop /var/lib/libvirt/images/share.img ~/Mine/share
 
 在 virt-manager 中挂载这块磁盘：
 
-![arch_1](../../../assets/arch_1.png)
+![arch_1](../../assets/arch_1.png)
 
 最后在虚拟机中挂载它即可，一般来说是 /dev/vd*。
 
-## 小技巧
+## tips
 
 ### 图形界面切换
 

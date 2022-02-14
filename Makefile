@@ -1,8 +1,8 @@
 CUR_TIME:=$(shell date +"%Y-%m-%d_%H:%M:%S")
 
-.PHONY: save push fetch history
+.PHONY: commit push fetch history
 
-save:
+commit:
 	git add .
 	git commit -m "$(CUR_TIME)"
 
