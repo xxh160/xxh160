@@ -8,6 +8,7 @@
 * A pathetic NJU Software Engineering student.  
 * c/c++ & Java.
 * Linux(Arch).
+* [Resume](job/resumes/Resume_Ch_En_2022_02_21.pdf).
 
 #### 📬 How to reach me
 
