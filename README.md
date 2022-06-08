@@ -1,14 +1,14 @@
 ### 👏 Welcome
 
-* I'm building my blog with Flutter and Spring!
+* I'm building my personal blog!
 * Please do look forward to!
 
 #### 😉 Who am i
 
-* A pathetic NJU Software Engineering student.  
-* c/c++ & Java.
+* A pathetic NJU Software Engineering student.
+* c/c++ & Java & Python.
 * Linux(Arch).
-* [Resume](job/resumes/Resume_Ch_En_2022_02_21.pdf).
+* Java backend, Database.
 
 #### 📬 How to reach me
 
